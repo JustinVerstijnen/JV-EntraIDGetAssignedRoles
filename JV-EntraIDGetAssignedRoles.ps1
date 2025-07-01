@@ -1,4 +1,5 @@
-﻿# Justin Verstijnen Entra ID Get Privileged Enterprise Applications-script
+# Justin Verstijnen Entra ID Get Privileged Users-script
+# Github page: https://github.com/JustinVerstijnen/JV-EntraIDGetAssignedRoles
 # Let's start!
 Write-Host "Script made by..." -ForegroundColor DarkCyan
 Write-Host "     _           _   _        __     __            _   _  _                  
@@ -7,7 +8,6 @@ Write-Host "     _           _   _        __     __            _   _  _
 | |_| | |_| \__ \ |_| | | | |   \ V /  __/ |  \__ \ |_| || | | | |  __/ | | |
  \___/ \__,_|___/\__|_|_| |_|    \_/ \___|_|  |___/\__|_|/ |_| |_|\___|_| |_|
                                                        |__/                  " -ForegroundColor DarkCyan
-
 
 # === PARAMETERS ===
 $exportfile = "JV-EntraIDGetAssignedRoles_report.csv"
