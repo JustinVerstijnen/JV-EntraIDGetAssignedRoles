@@ -18,12 +18,12 @@ Connect-MgGraph -Scopes "RoleManagement.Read.Directory", "Directory.Read.All", "
 # Step 2: Get all permanent role assignments
 $permanentAssignments = Get-MgRoleManagementDirectoryRoleAssignment -All
 
-# Step 3: Try to get eligible (PIM) role assignments – catch license issues
+# Step 3: Try to get eligible (PIM) role assignments â€“ catch license issues
 $eligibleAssignments = @()
 try {
     $eligibleAssignments = Get-MgRoleManagementDirectoryRoleEligibilitySchedule -All -ErrorAction Stop
 } catch {
-    Write-Host "⚠️  Eligible (PIM) role assignments could not be retrieved." -ForegroundColor Red
+    Write-Host "Eligible (PIM) role assignments could not be retrieved." -ForegroundColor Red
     Write-Host "Microsoft Entra ID P2 or Governance license is required. Script will continue to fetch the rest..." -ForegroundColor Yellow
     Start-Sleep -Seconds 1
 }
@@ -86,6 +86,6 @@ foreach ($assignment in $eligibleAssignments) {
 $exportList | Export-Csv -Path $exportfile -NoTypeInformation -Encoding UTF8 -Delimiter ";" -Force
 
 # Step 9: Done
-Write-Host "✅ Export completed: $exportfile" -ForegroundColor Green
+Write-Host "Export completed: $exportfile" -ForegroundColor Green
 Write-Host "If no further errors occured, the script has been succesfully executed. Go check out your file. Thank you for using my script!" -Foreground Green
 Start-Sleep -Seconds 3
